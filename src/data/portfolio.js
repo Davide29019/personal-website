@@ -8,7 +8,8 @@ export const personalInfo = {
   socials: {
     github: "https://github.com/Davide29019",
     linkedin: "https://www.linkedin.com/in/davide-ottaviani-5079a3232/",
-    email: "mailto:ottavianidavide.do@gmail.com",
+    emailUser: "davide.ottaviani.dev",
+    emailDomain: "gmail.com",
     cvPdf: "/resume.pdf",
   },
 };
@@ -21,7 +22,7 @@ export const education = [
   },
   {
     school: "Sapienza University of Rome",
-    degree: "BS, Computer and Control Engineering — Final Grade: 110/110",
+    degree: "BS, Computer and Control Engineering",
     period: "Sept 2022 – Oct 2025",
   },
 ];
