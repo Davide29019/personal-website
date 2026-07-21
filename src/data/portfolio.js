@@ -1,8 +1,8 @@
 export const personalInfo = {
   name: "Davide",
-  role: "AI & Robotics MSc Student",
-  tagline: "Building software at the intersection of Artificial Intelligence, Computer Vision, and Robotics.",
-  about: "Master's student in AI and Robotics focused on real-time 3D simulations, feature tracking pipelines, and scalable software architectures. Passionate about understanding complex systems from scratch and delivering functional proof-of-concept projects.",
+  role: "AI, NLP & Robotics MSc Student",
+  tagline: "AI · NLP · Computer Vision · Robotics",
+  about: "Master's student working across AI/ML, NLP, computer vision, and robotics (ROS2). Comfortable moving from research-style experimentation — model training, ablations, fine-tuning strategies — to full engineering pipelines, from data to deployment. Robotics and medical robotics are long-term interests I keep coming back to.",
   location: "Rome, Italy",
   socials: {
     github: "https://github.com/tuo-username",
@@ -14,34 +14,54 @@ export const personalInfo = {
 
 export const projects = [
   {
-    title: "Interactive 3D Rover & Dust Particle Simulation",
-    description: "A real-time web simulation demonstrating vehicle locomotion dynamics and custom physics-based dust particle rendering over terrain.",
-    techStack: ["Three.js", "JavaScript", "WebGL", "Physics Engine"],
+    title: "Joint Detection of AI-Generated Images & Post-Processing",
+    description: "Computer Vision exam project: a dual-task pipeline detecting whether an image is real or AI-generated and identifying its post-processing (original / transmitted / re-digitized), using a frozen DINOv3 backbone, an optional FFT frequency branch, and LoRA adapters.",
+    techStack: ["PyTorch", "DINOv3 (ViT-B/16)", "LoRA", "FFT", "Transformers"],
     highlights: [
-      "Custom particle shading and dynamic wheel-terrain interaction physics.",
-      "Optimized real-time rendering loop built with vanilla JavaScript & WebGL."
+      "Compared Baseline, Joint, and LoRA regimes across 6 configurations (CLS vs CLS+FFT features).",
+      "Best model (LoRA + FFT) reached 95.7% real/fake accuracy and 96.4% transformation-type accuracy.",
+      "Ablation on loss-weighting and shared-trunk bottleneck size to study task competition vs complementarity."
     ],
-    githubUrl: "https://github.com/tuo-username/rover-sim",
-    demoUrl: "", // Add link if available
+    githubUrl: "https://github.com/tuo-username/ai-image-detection",
+    demoUrl: "",
     featured: true
   },
   {
-    title: "Computer Vision & Visual Odometry Pipeline",
-    description: "Feature tracking and camera trajectory estimation system designed for mobile robot state estimation.",
-    techStack: ["Python", "OpenCV", "C++", "ROS2"],
+    title: "Multilingual Semantic Search & Retrieval",
+    description: "Information retrieval system built on a bi-encoder architecture, comparing baseline and fine-tuned sentence embedding models (Sentence Pairs vs Triplets) with a cross-encoder reranking stage on top.",
+    techStack: ["Python", "SentenceTransformers", "PyTorch", "Cross-Encoder"],
     highlights: [
-      "Optimized SIFT/ORB feature extraction and keypoint matching.",
-      "3D camera pose estimation with trajectory drift reduction."
+      "Fine-tuned distilbert and all-MiniLM with MultipleNegativesRankingLoss, comparing pair vs triplet strategies.",
+      "Best pipeline (Triplets + reranking) reached MRR 0.72, up from a 0.37 baseline.",
+      "Analyzed cosine vs Euclidean similarity behavior under embedding normalization."
     ],
-    githubUrl: "https://github.com/tuo-username/visual-odometry",
+    githubUrl: "https://github.com/tuo-username/semantic-search-nlp",
     demoUrl: "",
+    featured: true
+  },
+  {
+    title: "Interactive CC8 — Procedural Mars Rover 3D Game",
+    description: "Browser-based 3D driving game built from scratch with Three.js: pilot a rover across a procedurally generated Martian desert with a working rocker-bogie suspension, day/night cycle, and a mission system.",
+    techStack: ["Three.js", "JavaScript", "WebGL", "Vite"],
+    highlights: [
+      "Infinite procedural terrain via simplex-noise fBm with seamless chunk streaming.",
+      "Physically-animated rocker-bogie suspension sampling terrain height per wheel.",
+      "Live-synthesized audio, dynamic lighting, and a dependency-driven mission system."
+    ],
+    githubUrl: "https://github.com/SapienzaInteractiveGraphicsCourse/final-project-interactivecc8",
+    demoUrl: "https://sapienzainteractivegraphicscourse.github.io/final-project-interactivecc8/",
     featured: true
   }
 ];
 
 export const skills = [
-  { category: "Core & Languages", list: ["Python", "C++", "JavaScript", "SQL"] },
-  { category: "AI & Computer Vision", list: ["PyTorch", "OpenCV", "Scikit-Learn", "Feature Matching"] },
-  { category: "Robotics & Physics", list: ["ROS2", "Three.js", "Kinematics", "3D Simulation"] },
-  { category: "Tools & Environment", list: ["Git", "Linux / Bash", "Docker", "Vercel"] }
+  { category: "core", list: ["Python", "C++", "JavaScript", "SQL"] },
+  { category: "ai_nlp_vision", list: ["PyTorch", "Transformers", "SentenceTransformers", "OpenCV", "LoRA / PEFT"] },
+  { category: "robotics", list: ["ROS2", "Three.js", "Kinematics", "3D Simulation"] },
+  { category: "tools", list: ["Git", "Linux / Bash", "Docker", "Vercel"] }
+];
+
+export const currentlyExploring = [
+  "Medical robotics — surgical scene understanding (Critical View of Safety on laparoscopic video)",
+  "Vision-language alignment for domain-specific, low-data settings (CoOp / adapter-based prompt tuning)"
 ];
