@@ -1,8 +1,8 @@
 export const personalInfo = {
   name: "Davide",
-  role: "AI, NLP & Robotics MSc Student",
-  tagline: "AI · NLP · Computer Vision · Robotics",
-  about: "Master's student working across AI/ML, NLP, computer vision, and robotics (ROS2). Comfortable moving from research-style experimentation — model training, ablations, fine-tuning strategies — to full engineering pipelines, from data to deployment. Robotics and medical robotics are long-term interests I keep coming back to.",
+  role: "AI & Robotics Engineer",
+  tagline: "Bridging the gap between Deep Learning, NLP, Computer Vision, and Autonomous Robotics.",
+  about: "Master's student in AI and Robotics at Sapienza University of Rome. My passion spans across General AI, Computer Vision, Natural Language Processing, and physical robot deployment. I love building intelligent systems from the ground up, whether it's fine-tuning LLMs for RAG pipelines, adapting Vision Foundation Models (VFMs), or applying machine learning to robot kinematics. Currently, I'm working with ROS2 and exploring the cutting-edge field of Medical Robotics and Surgical Scene Understanding.",
   location: "Rome, Italy",
   socials: {
     github: "https://github.com/tuo-username",
@@ -14,54 +14,58 @@ export const personalInfo = {
 
 export const projects = [
   {
-    title: "Joint Detection of AI-Generated Images & Post-Processing",
-    description: "Computer Vision exam project: a dual-task pipeline detecting whether an image is real or AI-generated and identifying its post-processing (original / transmitted / re-digitized), using a frozen DINOv3 backbone, an optional FFT frequency branch, and LoRA adapters.",
-    techStack: ["PyTorch", "DINOv3 (ViT-B/16)", "LoRA", "FFT", "Transformers"],
+    title: "AI-Generated Image & Degradation Detector",
+    description: "A dual-task Computer Vision pipeline to simultaneously classify AI-generated images and identify real-world post-processing alterations.",
+    techStack: ["PyTorch", "DINOv3", "LoRA", "FFT"],
     highlights: [
-      "Compared Baseline, Joint, and LoRA regimes across 6 configurations (CLS vs CLS+FFT features).",
-      "Best model (LoRA + FFT) reached 95.7% real/fake accuracy and 96.4% transformation-type accuracy.",
-      "Ablation on loss-weighting and shared-trunk bottleneck size to study task competition vs complementarity."
+      "Combined visual features from a frozen DINOv3 backbone with a custom 2D Fast Fourier Transform (FFT) frequency descriptor.",
+      "Fine-tuned the model using LoRA adapters, achieving ~96% accuracy on complex image degradations."
     ],
-    githubUrl: "https://github.com/tuo-username/ai-image-detection",
+    githubUrl: "https://github.com/tuo-username/cv-aigi-detection",
     demoUrl: "",
     featured: true
   },
   {
-    title: "Multilingual Semantic Search & Retrieval",
-    description: "Information retrieval system built on a bi-encoder architecture, comparing baseline and fine-tuned sentence embedding models (Sentence Pairs vs Triplets) with a cross-encoder reranking stage on top.",
-    techStack: ["Python", "SentenceTransformers", "PyTorch", "Cross-Encoder"],
+    title: "Multilingual RAG & LLM Fine-Tuning",
+    description: "An end-to-end Retrieval-Augmented Generation (RAG) system with bi-encoder semantic search and custom instruction-tuned small LLMs.",
+    techStack: ["HuggingFace", "SentenceTransformers", "Qwen", "LoRA"],
     highlights: [
-      "Fine-tuned distilbert and all-MiniLM with MultipleNegativesRankingLoss, comparing pair vs triplet strategies.",
-      "Best pipeline (Triplets + reranking) reached MRR 0.72, up from a 0.37 baseline.",
-      "Analyzed cosine vs Euclidean similarity behavior under embedding normalization."
+      "Trained bi-encoders using Triplet Loss for robust semantic document retrieval and reranking.",
+      "Applied LoRA fine-tuning to small LLMs (SmolLM/Qwen) and evaluated generation quality using an LLM-as-a-judge approach."
     ],
-    githubUrl: "https://github.com/tuo-username/semantic-search-nlp",
+    githubUrl: "https://github.com/tuo-username/mnlp-rag-system",
     demoUrl: "",
     featured: true
   },
   {
-    title: "Interactive CC8 — Procedural Mars Rover 3D Game",
-    description: "Browser-based 3D driving game built from scratch with Three.js: pilot a rover across a procedurally generated Martian desert with a working rocker-bogie suspension, day/night cycle, and a mission system.",
-    techStack: ["Three.js", "JavaScript", "WebGL", "Vite"],
+    title: "Machine Learning for Robot Kinematics & Perception",
+    description: "Deep learning models to solve complex robotic inverse kinematics and visual perception tasks in a Robot Soccer environment.",
+    techStack: ["PyTorch", "Optuna", "ResNet", "Ensemble NNs"],
     highlights: [
-      "Infinite procedural terrain via simplex-noise fBm with seamless chunk streaming.",
-      "Physically-animated rocker-bogie suspension sampling terrain height per wheel.",
-      "Live-synthesized audio, dynamic lighting, and a dependency-driven mission system."
+      "Designed Neural Network Ensembles to solve Inverse Kinematics for 3, 4, and 6-DOF robotic manipulators without analytical models.",
+      "Developed custom CNNs and fine-tuned ResNet18 architectures for highly imbalanced object classification and coordinate regression."
     ],
-    githubUrl: "https://github.com/SapienzaInteractiveGraphicsCourse/final-project-interactivecc8",
-    demoUrl: "https://sapienzainteractivegraphicscourse.github.io/final-project-interactivecc8/",
+    githubUrl: "https://github.com/tuo-username/ml-robotics",
+    demoUrl: "",
+    featured: true
+  },
+  {
+    title: "Interactive CC8: 3D Mars Rover Simulation",
+    description: "A real-time, browser-based 3D simulation featuring a drivable rover with physically-animated suspension across procedural terrain.",
+    techStack: ["JavaScript", "Three.js", "WebGL", "Procedural Generation"],
+    highlights: [
+      "Implemented an infinite chunk-streaming procedural terrain using fractional Brownian motion (fBm) and dynamic day/night cycles.",
+      "Programmed a working rocker-bogie suspension system based on terrain-height sampling and real-time particle emission."
+    ],
+    githubUrl: "https://github.com/tuo-username/interactive-cc8",
+    demoUrl: "", // Add link if you hosted the game online!
     featured: true
   }
 ];
 
 export const skills = [
-  { category: "core", list: ["Python", "C++", "JavaScript", "SQL"] },
-  { category: "ai_nlp_vision", list: ["PyTorch", "Transformers", "SentenceTransformers", "OpenCV", "LoRA / PEFT"] },
-  { category: "robotics", list: ["ROS2", "Three.js", "Kinematics", "3D Simulation"] },
-  { category: "tools", list: ["Git", "Linux / Bash", "Docker", "Vercel"] }
-];
-
-export const currentlyExploring = [
-  "Medical robotics — surgical scene understanding (Critical View of Safety on laparoscopic video)",
-  "Vision-language alignment for domain-specific, low-data settings (CoOp / adapter-based prompt tuning)"
+  { category: "Core & Frameworks", list: ["Python", "C++", "PyTorch", "HuggingFace", "Optuna"] },
+  { category: "Computer Vision", list: ["DINOv3", "ResNet", "CNNs", "Object Localization", "Feature Extraction"] },
+  { category: "NLP & LLMs", list: ["RAG Systems", "LoRA Fine-tuning", "Sentence Transformers", "Semantic Search"] },
+  { category: "Robotics & Sim", list: ["ROS2", "Medical Robotics", "Kinematics", "Three.js", "Simulation"] }
 ];
