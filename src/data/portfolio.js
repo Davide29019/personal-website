@@ -1,37 +1,37 @@
 export const personalInfo = {
   name: "Davide",
-  role: "AI & Robotics Specialist",
-  tagline: "Sviluppo soluzioni all'intersezione tra Intelligenza Artificiale, Computer Vision e Robotica.",
-  about: "Studente magistrale in AI e Robotica. Mi occupo di progettazione di sistemi complessi, simulazioni fisiche 3D e algoritmi di apprendimento. Focus su proof-of-work e architetture software efficienti.",
-  location: "Roma, Italia",
+  role: "AI & Robotics MSc Student",
+  tagline: "Building software at the intersection of Artificial Intelligence, Computer Vision, and Robotics.",
+  about: "Master's student in AI and Robotics focused on real-time 3D simulations, feature tracking pipelines, and scalable software architectures. Passionate about understanding complex systems from scratch and delivering functional proof-of-concept projects.",
+  location: "Rome, Italy",
   socials: {
     github: "https://github.com/tuo-username",
     linkedin: "https://linkedin.com/in/tuo-username",
     email: "tua-email@email.com",
-    cvPdf: "/resume.pdf" // Metteremo il PDF nella cartella public/
+    cvPdf: "/resume.pdf"
   }
 };
 
 export const projects = [
   {
-    title: "Simulatore Rover 3D & Particle System",
-    description: "Simulatore web interattivo in tempo reale con fisica dei fluidi/particelle per le ruote in movimento su terreno deformabile.",
+    title: "Interactive 3D Rover & Dust Particle Simulation",
+    description: "A real-time web simulation demonstrating vehicle locomotion dynamics and custom physics-based dust particle rendering over terrain.",
     techStack: ["Three.js", "JavaScript", "WebGL", "Physics Engine"],
     highlights: [
-      "Rendering e shading personalizzato per le particelle di polvere.",
-      "Calcolo cinematico in tempo reale per la trazione delle ruote."
+      "Custom particle shading and dynamic wheel-terrain interaction physics.",
+      "Optimized real-time rendering loop built with vanilla JavaScript & WebGL."
     ],
     githubUrl: "https://github.com/tuo-username/rover-sim",
-    demoUrl: "", // Opzionale: inserisci il link se hai una demo live
+    demoUrl: "", // Add link if available
     featured: true
   },
   {
-    title: "Pipeline CV & Visual Odometry",
-    description: "Sistema per il tracciamento di feature e stima della traiettoria robotica basato su algoritmi di Computer Vision.",
+    title: "Computer Vision & Visual Odometry Pipeline",
+    description: "Feature tracking and camera trajectory estimation system designed for mobile robot state estimation.",
     techStack: ["Python", "OpenCV", "C++", "ROS2"],
     highlights: [
-      "Estrazione e matching di feature (SIFT/ORB) ottimizzato.",
-      "Stima della posa 3D e riduzione dell'errore di drift."
+      "Optimized SIFT/ORB feature extraction and keypoint matching.",
+      "3D camera pose estimation with trajectory drift reduction."
     ],
     githubUrl: "https://github.com/tuo-username/visual-odometry",
     demoUrl: "",
@@ -40,8 +40,8 @@ export const projects = [
 ];
 
 export const skills = [
-  { category: "Languages & Core", list: ["Python", "C++", "JavaScript", "SQL"] },
-  { category: "AI & Vision", list: ["PyTorch", "OpenCV", "Scikit-Learn", "Computer Vision"] },
-  { category: "Robotics & Sim", list: ["ROS2", "Three.js", "Physics Engines", "3D Modeling"] },
-  { category: "Tools & Workflow", list: ["Git", "Linux/Bash", "Docker", "Vercel"] }
+  { category: "Core & Languages", list: ["Python", "C++", "JavaScript", "SQL"] },
+  { category: "AI & Computer Vision", list: ["PyTorch", "OpenCV", "Scikit-Learn", "Feature Matching"] },
+  { category: "Robotics & Physics", list: ["ROS2", "Three.js", "Kinematics", "3D Simulation"] },
+  { category: "Tools & Environment", list: ["Git", "Linux / Bash", "Docker", "Vercel"] }
 ];
