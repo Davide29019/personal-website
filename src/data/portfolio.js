@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Davide Ottaviani",
   role: "AI & Robotics Engineer",
-  tagline: "Building intelligent systems across Computer Vision, NLP, and Robotics.",
+  tagline: "From foundation models to real-world robotics.",
   about:
     "MSc student in Artificial Intelligence and Robotics at Sapienza University of Rome (BS in Computer and Control Engineering). I work across the full stack of modern AI: fine-tuning vision foundation models, building RAG pipelines with LLMs, and applying deep learning to robot kinematics and perception.",
   location: "Rome, Italy",
@@ -71,7 +71,7 @@ export const projects = [
     featured: true,
   },
   {
-    title: "Interactive CC8 — Procedural Mars Rover 3D Game",
+    title: "Interactive CC8 - Procedural Mars Rover 3D Game",
     description:
       "A real-time, browser-based 3D driving game built from scratch with Three.js: a rover crosses a procedurally generated Martian desert with a physically animated suspension and a dependency-driven mission system.",
     techStack: ["JavaScript", "Three.js", "WebGL", "Vite"],
