@@ -41,11 +41,24 @@ import '../styles/global.css';
              class="px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 text-sm font-medium transition border border-slate-800">
             LinkedIn
           </a>
-          <!-- Email button con offuscamento via script -->
-          <a id="email-btn" href="#"
-             class="px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 text-sm font-medium transition border border-slate-800 cursor-pointer">
-            Email
-          </a>
+          
+          <!-- Email button con copia negli appunti e toast notifiche -->
+          <div class="relative inline-block">
+            <button 
+              id="email-btn"
+              type="button"
+              class="px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 text-sm font-medium transition border border-slate-800 cursor-pointer"
+            >
+              Email
+            </button>
+            <span 
+              id="toast" 
+              class="absolute -top-9 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-cyan-500 text-slate-950 text-xs font-bold rounded shadow-lg opacity-0 pointer-events-none transition-all duration-200 whitespace-nowrap"
+            >
+              Copied to clipboard!
+            </span>
+          </div>
+
           <a href={personalInfo.socials.cvPdf} target="_blank"
              class="px-5 py-2.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-sm font-semibold transition">
             Download Resume (PDF)
@@ -149,12 +162,35 @@ import '../styles/global.css';
 
     </div>
 
-    <!-- Script per comporre l'email solo lato client -->
+    <!-- Script per la gestione della copia della mail negli appunti -->
     <script is:inline define:vars={{ u: personalInfo.socials.emailUser, d: personalInfo.socials.emailDomain }}>
       document.addEventListener('DOMContentLoaded', () => {
         const btn = document.getElementById('email-btn');
+        const toast = document.getElementById('toast');
+        const fullEmail = `${u}@${d}`;
+
         if (btn) {
-          btn.setAttribute('href', `mailto:${u}@${d}`);
+          btn.addEventListener('click', async () => {
+            try {
+              // Copia l'indirizzo negli appunti del browser
+              await navigator.clipboard.writeText(fullEmail);
+
+              // Mostra il tooltip "Copied to clipboard!"
+              if (toast) {
+                toast.classList.remove('opacity-0');
+                toast.classList.add('opacity-100');
+
+                // Nasconde il tooltip dopo 2 secondi
+                setTimeout(() => {
+                  toast.classList.remove('opacity-100');
+                  toast.classList.add('opacity-0');
+                }, 2000);
+              }
+            } catch (err) {
+              // Fallback nel caso estremo in cui la Clipboard API sia bloccata dal browser
+              window.location.href = `mailto:${fullEmail}`;
+            }
+          });
         }
       });
     </script>
