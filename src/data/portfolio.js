@@ -3,7 +3,7 @@ export const personalInfo = {
   role: "AI & Robotics Engineer",
   tagline: "Building intelligent systems across Computer Vision, NLP, and Robotics.",
   about:
-    "MSc student in Artificial Intelligence and Robotics at Sapienza University of Rome (BS in Computer and Control Engineering, 110/110). I work across the full stack of modern AI: fine-tuning vision foundation models, building RAG pipelines with LLMs, and applying deep learning to robot kinematics and perception. Currently exploring ROS2 and surgical scene understanding.",
+    "MSc student in Artificial Intelligence and Robotics at Sapienza University of Rome (BS in Computer and Control Engineering). I work across the full stack of modern AI: fine-tuning vision foundation models, building RAG pipelines with LLMs, and applying deep learning to robot kinematics and perception.",
   location: "Rome, Italy",
   socials: {
     github: "https://github.com/Davide29019",
@@ -35,7 +35,7 @@ export const projects = [
     techStack: ["PyTorch", "DINOv3 (ViT-B/16)", "LoRA / PEFT", "Transformers"],
     highlights: [
       "Combined frozen DINOv3 visual features with a custom 2D FFT frequency descriptor to capture low-level compression artifacts the backbone alone misses.",
-      "Compared Baseline, Joint, and LoRA training regimes across 6 configurations; the best (LoRA + FFT) reached 95.7% real/fake accuracy and 96.4% transformation-type accuracy.",
+      "Compared Baseline, Joint, and LoRA training regimes across 6 configurations.",
       "Full ablations on loss-weighting and shared-trunk bottleneck size to characterize the trade-off between the two tasks.",
     ],
     githubUrl: "https://github.com/janniuni/cv_project_2526",
@@ -48,9 +48,9 @@ export const projects = [
       "An end-to-end Retrieval-Augmented Generation pipeline: a bi-encoder retriever with cross-encoder reranking, feeding small instruction-tuned LLMs evaluated with LLM-as-a-judge and human annotation.",
     techStack: ["Python", "SentenceTransformers", "PyTorch", "Qwen3 / SmolLM2", "LoRA"],
     highlights: [
-      "Fine-tuned DistilBERT and all-MiniLM with MultipleNegativesRankingLoss (Sentence Pairs vs. Triplets); best pipeline (Triplets + cross-encoder reranking) reached MRR 0.72, up from a 0.37 baseline.",
-      "Built a full RAG generation stage across 6 prompting configurations (Baseline, RAG, Oracle, Few-Shot, Wikidata-augmented), and LoRA fine-tuned the best model, lifting Sub-EM from 0.286 to 0.321.",
-      "Validated an LLM-as-a-judge against two independent human annotators (Cohen's Kappa 0.95 human-human), quantifying the judge's harshness and failure modes.",
+      "Fine-tuned DistilBERT and all-MiniLM with MultipleNegativesRankingLoss (Sentence Pairs vs. Triplets).",
+      "Built a full RAG generation stage across 6 prompting configurations (Baseline, RAG, Oracle, Few-Shot, Wikidata-augmented), and LoRA fine-tuned the best model.",
+      "Validated an LLM-as-a-judge against two independent human annotators, quantifying the judge's harshness and failure modes.",
     ],
     githubUrl: "",
     demoUrl: "",
@@ -62,9 +62,9 @@ export const projects = [
       "Deep learning models for model-free inverse kinematics and visual perception in a Robot Soccer environment, with systematic hyperparameter search via Optuna.",
     techStack: ["PyTorch", "Optuna", "ResNet18", "Ensemble NNs"],
     highlights: [
-      "Trained Ensembles of Feedforward Neural Networks to learn inverse kinematics for 3, 4, and 6-DOF robotic arms directly from data, reaching R² ≈ 0.66 on non-redundant robots.",
+      "Trained Ensembles of Feedforward Neural Networks to learn inverse kinematics for 3, 4, and 6-DOF robotic arms directly from data.",
       "Identified and resolved a severe cross-session distribution shift by merging acquisition logs, turning a catastrophic negative R² into stable generalization.",
-      "Built a ResNet18-based object classifier (99.27% accuracy) and a conditional regression head for object localization under strong class imbalance.",
+      "Built a ResNet18-based object classifier and a conditional regression head for object localization under strong class imbalance.",
     ],
     githubUrl: "",
     demoUrl: "",
@@ -97,7 +97,7 @@ export const skills = [
   },
   {
     category: "Robotics & Simulation",
-    list: ["ROS2", "Kinematics", "Three.js", "WebGL", "3D Simulation"],
+    list: ["ROS2", "Kinematics", "Three.js", "WebGL", "3D Simulation", "Matlab"],
   },
   {
     category: "Tools & Workflow",
