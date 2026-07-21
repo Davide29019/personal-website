@@ -12,6 +12,11 @@ import '../styles/global.css';
     <meta name="description" content={personalInfo.tagline} />
     <title>{personalInfo.name} | {personalInfo.role}</title>
 	<meta name="google-site-verification" content="UpLNXUG3cxN1PDwAPipUOFsGyKufX9lVVRQrO1XZVhU" />
+	<!-- Open Graph per Social & Chat (LinkedIn, WhatsApp, Telegram) -->
+	<meta property="og:title" content={`${personalInfo.name} | ${personalInfo.role}`} />
+	<meta property="og:description" content={personalInfo.tagline} />
+	<meta property="og:url" content="https://davide-ottaviani.vercel.app" />
+	<meta property="og:type" content="website" />
   </head>
   <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950 min-h-screen">
 
