@@ -10,7 +10,7 @@ export const personalInfo = {
     linkedin: "https://www.linkedin.com/in/davide-ottaviani-5079a3232/",
     emailUser: "davide.ottaviani.dev",
     emailDomain: "gmail.com",
-    cvPdf: "/resume.pdf",
+    cvPdf: "/Davide_Ottaviani_CV_no_phone_number.pdf",
   },
 };
 
