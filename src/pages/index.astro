@@ -18,6 +18,29 @@ import '../styles/global.css';
 	<meta property="og:url" content="https://davide-ottaviani.vercel.app" />
 	<meta property="og:type" content="website" />
 	<meta property="og:image" content="https://davide-ottaviani.vercel.app/og-image.png" />
+	<link rel="canonical" href="https://davide-ottaviani.vercel.app/" />
+	<script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": personalInfo.name,
+      "jobTitle": personalInfo.role,
+      "description": personalInfo.tagline,
+      "url": "https://davide-ottaviani.vercel.app",
+      "image": "https://davide-ottaviani.vercel.app/og-image.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Rome",
+        "addressCountry": "IT"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Sapienza University of Rome"
+      },
+      "sameAs": [
+        personalInfo.socials.github,
+        personalInfo.socials.linkedin
+      ]
+    })} />
   </head>
   <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950 min-h-screen">
 
@@ -29,7 +52,7 @@ import '../styles/global.css';
           📍 {personalInfo.location}
         </div>
         <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white">
-          Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Davide</span>.
+          Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">{personalInfo.name}</span>.
         </h1>
         <p class="text-xl md:text-2xl text-slate-300 font-light leading-relaxed max-w-2xl">
           {personalInfo.tagline}
